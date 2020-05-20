@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lfx.mall.marketing.persistence.dao.PrizeRecordMapper">
+    <resultMap id="BaseResultMap" type="com.lfx.mall.marketing.persistence.entity.PrizeRecord">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="act_id" jdbcType="INTEGER" property="actId" />
+        <result column="prize_id" jdbcType="INTEGER" property="prizeId" />
+        <result column="prize_type" jdbcType="INTEGER" property="prizeType" />
+        <result column="member_id" jdbcType="INTEGER" property="memberId" />
+        <result column="num" jdbcType="INTEGER" property="num" />
+        <result column="money" jdbcType="INTEGER" property="money" />
+        <result column="receive_status" jdbcType="INTEGER" property="receiveStatus" />
+        <result column="ext_id" jdbcType="VARCHAR" property="extId" />
+        <result column="memo" jdbcType="VARCHAR" property="memo" />
+        <result column="biz_no" jdbcType="VARCHAR" property="bizNo" />
+        <result column="extra" jdbcType="VARCHAR" property="extra" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, act_id, prize_id, prize_type, member_id, num, money, receive_status, ext_id, 
+        memo, biz_no, extra, create_time, update_time
+    </sql>
+</mapper>

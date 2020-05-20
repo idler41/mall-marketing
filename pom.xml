@@ -11,6 +11,7 @@
 
     <modules>
         <module>mall-marketing-persistence</module>
+        <module>mall-marketing-common</module>
     </modules>
 
     <properties>
@@ -21,6 +22,7 @@
         <spring.boot.version>2.3.0.RELEASE</spring.boot.version>
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <sharding-sphere.version>4.1.0</sharding-sphere.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
 
     <dependencyManagement>
@@ -52,6 +54,17 @@
                 <version>${project.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.lfx.mall-marketing</groupId>
+                <artifactId>mall-marketing-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
