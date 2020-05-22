@@ -12,6 +12,11 @@
     <modules>
         <module>mall-marketing-persistence</module>
         <module>mall-marketing-common</module>
+        <module>mall-marketing-mq</module>
+        <module>mall-marketing-task</module>
+        <module>mall-marketing-web</module>
+        <module>mall-marketing-service</module>
+        <module>mall-marketing-service-api</module>
     </modules>
 
     <properties>
@@ -23,10 +28,14 @@
         <mybatis-plus.version>3.2.0</mybatis-plus.version>
         <sharding-sphere.version>4.1.0</sharding-sphere.version>
         <guava.version>29.0-jre</guava.version>
+
+        <dubbo.version>2.7.6</dubbo.version>
+        <cglib.version>3.3.0</cglib.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -36,9 +45,48 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-zookeeper</artifactId>
+                <type>pom</type>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-log4j12</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
             </dependency>
 
             <!-- central库没有该依赖包,jcenter和阿里云镜像存在-->
@@ -51,6 +99,12 @@
             <dependency>
                 <groupId>com.lfx.mall-marketing</groupId>
                 <artifactId>mall-marketing-persistence</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.lfx.mall-marketing</groupId>
+                <artifactId>mall-marketing-service-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -87,6 +141,20 @@
                 <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>-Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=256m</argLine>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                    <argLine>-XX:-UseSplitVerifier</argLine>
+                    <!-- 打包过程忽略Junit测试 -->
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>

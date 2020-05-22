@@ -22,5 +22,5 @@ dependency-reduced-pom.xml
 **/bin/*
 /out/
 *.versionsBackup
-mall-marketing-persistence/src/main/resources/application-db.properties
+**/application-db.properties
 
