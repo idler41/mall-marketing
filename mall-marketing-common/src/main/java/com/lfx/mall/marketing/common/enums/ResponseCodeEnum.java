@@ -1,4 +1,4 @@
-package com.lfx.mall.marketing.service.base.enums;
+package com.lfx.mall.marketing.common.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

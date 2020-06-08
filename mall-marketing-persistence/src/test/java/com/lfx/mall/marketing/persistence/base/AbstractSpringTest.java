@@ -1,4 +1,4 @@
-package com.lfx.mall.marketing.persistence;
+package com.lfx.mall.marketing.persistence.base;
 
 import com.lfx.mall.marketing.persistence.config.PersistenceConfig;
 import org.junit.runner.RunWith;
@@ -11,5 +11,5 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = PersistenceConfig.class)
-public class AbstractSpringClass {
+public class AbstractSpringTest {
 }

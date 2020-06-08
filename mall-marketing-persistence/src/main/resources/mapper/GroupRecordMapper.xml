@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lfx.mall.marketing.persistence.dao.GroupRecordMapper">
+    <resultMap id="BaseResultMap" type="com.lfx.mall.marketing.persistence.entity.GroupRecord">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="activity_id" jdbcType="INTEGER" property="activityId" />
+        <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+        <result column="seller_name" jdbcType="VARCHAR" property="sellerName" />
+        <result column="promotion_product_id" jdbcType="INTEGER" property="promotionProductId" />
+        <result column="product_id" jdbcType="INTEGER" property="productId" />
+        <result column="promotion_product_goods_id" jdbcType="INTEGER" property="promotionProductGoodsId" />
+        <result column="product_goods_id" jdbcType="INTEGER" property="productGoodsId" />
+        <result column="price" jdbcType="DECIMAL" property="price" />
+        <result column="number" jdbcType="INTEGER" property="number" />
+        <result column="member_id" jdbcType="INTEGER" property="memberId" />
+        <result column="member_nick_name" jdbcType="VARCHAR" property="memberNickName" />
+        <result column="member_image_url" jdbcType="VARCHAR" property="memberImageUrl" />
+        <result column="orders_sn" jdbcType="VARCHAR" property="ordersSn" />
+        <result column="orders_psn" jdbcType="VARCHAR" property="ordersPsn" />
+        <result column="record_status" jdbcType="TINYINT" property="recordStatus" />
+        <result column="setup_count" jdbcType="INTEGER" property="setupCount" />
+        <result column="join_count" jdbcType="INTEGER" property="joinCount" />
+        <result column="setup_expire_time" jdbcType="TIMESTAMP" property="setupExpireTime" />
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+        <result column="disjoin_time" jdbcType="TIMESTAMP" property="disjoinTime" />
+        <result column="setup_time" jdbcType="TIMESTAMP" property="setupTime" />
+        <result column="setup_expire_minutes" jdbcType="INTEGER" property="setupExpireMinutes" />
+        <result column="min_group_minutes" jdbcType="INTEGER" property="minGroupMinutes" />
+        <result column="max_group_minutes" jdbcType="INTEGER" property="maxGroupMinutes" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+        <result column="product_name" jdbcType="VARCHAR" property="productName" />
+        <result column="group_type" jdbcType="TINYINT" property="groupType" />
+        <result column="redpacket_id" jdbcType="VARCHAR" property="redpacketId" />
+        <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
+        <result column="parent_member_id" jdbcType="INTEGER" property="parentMemberId" />
+        <result column="redpacket_status" jdbcType="TINYINT" property="redpacketStatus" />
+        <result column="redpacket_expire_time" jdbcType="TIMESTAMP" property="redpacketExpireTime" />
+        <result column="refund_status" jdbcType="TINYINT" property="refundStatus" />
+        <result column="red_envelope_show" jdbcType="DECIMAL" property="redEnvelopeShow" />
+        <result column="is_delete" jdbcType="TINYINT" property="isDelete" />
+        <result column="is_packet" jdbcType="TINYINT" property="isPacket" />
+        <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+        <result column="send_status" jdbcType="TINYINT" property="sendStatus" />
+        <result column="close_reason" jdbcType="TINYINT" property="closeReason" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, activity_id, seller_id, seller_name, promotion_product_id, product_id, promotion_product_goods_id, 
+        product_goods_id, price, number, member_id, member_nick_name, member_image_url, orders_sn, 
+        orders_psn, record_status, setup_count, join_count, setup_expire_time, start_time, 
+        disjoin_time, setup_time, setup_expire_minutes, min_group_minutes, max_group_minutes, 
+        create_time, update_time, product_name, group_type, redpacket_id, parent_id, parent_member_id, 
+        redpacket_status, redpacket_expire_time, refund_status, red_envelope_show, is_delete, 
+        is_packet, finish_time, send_status, close_reason
+    </sql>
+</mapper>

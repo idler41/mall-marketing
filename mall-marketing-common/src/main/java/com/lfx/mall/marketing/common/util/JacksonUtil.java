@@ -5,9 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import lombok.experimental.UtilityClass;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -16,17 +14,17 @@ import java.util.Map;
 @UtilityClass
 public class JacksonUtil {
 
-    private static final ObjectMapper OBJECT_MAPPER;
+    private final ObjectMapper OBJECT_MAPPER;
 
     static {
         OBJECT_MAPPER = new ObjectMapper();
     }
 
-    public static String toString(Object val) {
-        return toString(val, false);
+    public String toJsonStr(Object val) {
+        return toJsonStr(val, false);
     }
 
-    public static String toString(Object val, boolean prettyFormat) {
+    public String toJsonStr(Object val, boolean prettyFormat) {
         try {
             return prettyFormat ? OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(val) : OBJECT_MAPPER.writeValueAsString(val);
         } catch (JsonProcessingException e) {
@@ -34,7 +32,7 @@ public class JacksonUtil {
         }
     }
 
-    public static <T> T parseObject(String json, Class<T> clazz) {
+    public <T> T parseObject(String json, Class<T> clazz) {
         try {
             return OBJECT_MAPPER.readValue(json, clazz);
         } catch (JsonProcessingException e) {
@@ -42,7 +40,7 @@ public class JacksonUtil {
         }
     }
 
-    public static <T> List<T> parseList(String json, Class<T> clazz) {
+    public <T> List<T> parseList(String json, Class<T> clazz) {
         try {
             CollectionType javaType = OBJECT_MAPPER.getTypeFactory()
                     .constructCollectionType(List.class, clazz);
@@ -52,19 +50,19 @@ public class JacksonUtil {
         }
     }
 
-    public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
-        map.put("a", "123");
-        map.put("b", "456");
-
-        System.out.println(toString(map));
-        System.out.println(toString(map, true));
-        System.out.println(toString(map));
-
-        String json = toString(map);
-        map = parseObject(json, Map.class);
-        System.out.println(map.get("a"));
-
-        System.out.println();
-    }
+//    public void main(String[] args) {
+//        Map<String, String> map = new HashMap<>();
+//        map.put("a", "123");
+//        map.put("b", "456");
+//
+//        System.out.println(toString(map));
+//        System.out.println(toString(map, true));
+//        System.out.println(toString(map));
+//
+//        String json = toString(map);
+//        map = parseObject(json, Map.class);
+//        System.out.println(map.get("a"));
+//
+//        System.out.println();
+//    }
 }

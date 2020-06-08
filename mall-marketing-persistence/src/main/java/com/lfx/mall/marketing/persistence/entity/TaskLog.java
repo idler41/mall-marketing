@@ -6,55 +6,55 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-05-18 14:42:48
+ * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
+ * @date 2020-06-04 18:34:52
  */
 @TableName("t_task_log")
 @Data
 public class TaskLog implements Serializable {
 
     /**
-     *  自增长主键
+     * 自增长主键
      */
     private Integer id;
 
     /**
-     *  任务类型
+     * 任务类型
      */
     private Integer taskType;
 
     /**
-     *  逻辑表名
+     * 逻辑表名
      */
     private String logicTableName;
 
     /**
-     *  库下标
+     * 库下标
      */
     private Integer dbIndex;
 
     /**
-     *  表下标
+     * 表下标
      */
     private Integer tableIndex;
 
     /**
-     *  执行开始时间
+     * 执行开始时间
      */
     private Long startTime;
 
     /**
-     *  执行结束时间
+     * 执行结束时间
      */
     private Long endTime;
 
     /**
-     *  创建时间
+     * 创建时间
      */
     private Date createTime;
 
     /**
-     *  更新时间
+     * 更新时间
      */
     private Date updateTime;
 }

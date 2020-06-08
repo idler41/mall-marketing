@@ -13,7 +13,7 @@ import java.util.Arrays;
 @UtilityClass
 public class AppUtil {
 
-    public static String getAllSpringBeanStr(ConfigurableApplicationContext ctx) {
+    public String getAllSpringBeanStr(ConfigurableApplicationContext ctx) {
         StringBuilder allBeanNameStr = new StringBuilder(500);
         allBeanNameStr.append("----------------- spring beans start -----------------")
                 .append(System.lineSeparator());

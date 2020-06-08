@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * @date 2020-05-20 14:08:17
  */
 @Component
-public class PrizeRecordTableSharding extends AbstractTableAlgorithm<Integer> {
+public class GroupRecordTableSharding extends AbstractTableAlgorithm<Integer> {
 
     @Autowired
     private StringConsistentHashCoding tableHashCoding;

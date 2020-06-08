@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 2020-05-20 14:08:17
  */
 @Component
-public class PrizeRecordDbSharding extends AbstractDbAlgorithm<Integer> {
+public class GroupRecordDbSharding extends AbstractDbAlgorithm<Integer> {
 
     @Override
     protected Integer resolveIndex(String columnName, Integer value) {

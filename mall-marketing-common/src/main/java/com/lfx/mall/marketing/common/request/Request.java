@@ -1,4 +1,4 @@
-package com.lfx.mall.marketing.service.base.request;
+package com.lfx.mall.marketing.common.request;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

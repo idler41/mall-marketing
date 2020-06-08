@@ -13,10 +13,10 @@ import java.util.Map;
  */
 @UtilityClass
 public class CachedBeanCopier {
-    private static final Map<String, BeanCopier> BEAN_COPIERS = new HashMap<>();
-    private static final String KEY_SPLICE = "-";
+    private final Map<String, BeanCopier> BEAN_COPIERS = new HashMap<>();
+    private final String KEY_SPLICE = "-";
 
-    public static <S, T> BeanCopier registerToCache(Class<S> sourceClass, Class<T> targetClass) {
+    public <S, T> BeanCopier registerToCache(Class<S> sourceClass, Class<T> targetClass) {
         String key = genKey(sourceClass, targetClass);
         BeanCopier copier = null;
         if (!BEAN_COPIERS.containsKey(key)) {
@@ -28,11 +28,11 @@ public class CachedBeanCopier {
         return copier;
     }
 
-    public static <S, T> T copy(S source, Class<T> targetClazz) {
+    public <S, T> T copy(S source, Class<T> targetClazz) {
         return copy(source, targetClazz, null);
     }
 
-    public static <S, T> T copy(S source, Class<T> targetClazz, Converter converter) {
+    public <S, T> T copy(S source, Class<T> targetClazz, Converter converter) {
         if (source == null || targetClazz == null) {
             return null;
         }
@@ -45,13 +45,13 @@ public class CachedBeanCopier {
         return registerAndCopy(source, instance, converter);
     }
 
-    private static <S, T> T registerAndCopy(S source, T target, Converter converter) {
+    private <S, T> T registerAndCopy(S source, T target, Converter converter) {
         BeanCopier copier = registerToCache(source.getClass(), target.getClass());
         copier.copy(source, target, converter);
         return target;
     }
 
-    private static String genKey(Class<?> sourceClass, Class<?> targetClass) {
+    private String genKey(Class<?> sourceClass, Class<?> targetClass) {
         return sourceClass.getName() + KEY_SPLICE + targetClass.getName();
     }
 

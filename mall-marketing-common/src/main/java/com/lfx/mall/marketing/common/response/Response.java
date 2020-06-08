@@ -1,4 +1,4 @@
-package com.lfx.mall.marketing.service.base.response;
+package com.lfx.mall.marketing.common.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
