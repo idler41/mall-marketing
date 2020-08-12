@@ -1,7 +1,5 @@
 package com.lfx.mall.marketing.web;
 
-import com.lfx.mall.marketing.service.PrizeRecordService;
-import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

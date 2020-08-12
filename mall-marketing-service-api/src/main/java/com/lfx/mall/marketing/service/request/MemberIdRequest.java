@@ -1,10 +1,18 @@
 package com.lfx.mall.marketing.service.request;
 
-import com.lfx.mall.marketing.service.base.request.IdRequest;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-05-22 10:51:39
+ * @date 2020-07-30 15:20:13
  */
-public class MemberIdRequest<T> extends IdRequest<T> {
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class MemberIdRequest extends IdRequest<Integer>{
+
+    /**
+     * 用户id
+     */
+    private Integer memberId;
 }
