@@ -3,7 +3,6 @@ package com.lfx.mall.marketing.common.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import lombok.experimental.UtilityClass;
 
 import java.util.List;
 
@@ -11,20 +10,19 @@ import java.util.List;
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
  * @date 2020-05-21 14:39:16
  */
-@UtilityClass
 public class JacksonUtil {
 
-    private final ObjectMapper OBJECT_MAPPER;
+    private static final ObjectMapper OBJECT_MAPPER;
 
     static {
         OBJECT_MAPPER = new ObjectMapper();
     }
 
-    public String toJsonStr(Object val) {
+    public static String toJsonStr(Object val) {
         return toJsonStr(val, false);
     }
 
-    public String toJsonStr(Object val, boolean prettyFormat) {
+    public static String toJsonStr(Object val, boolean prettyFormat) {
         try {
             return prettyFormat ? OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(val) : OBJECT_MAPPER.writeValueAsString(val);
         } catch (JsonProcessingException e) {
@@ -32,7 +30,7 @@ public class JacksonUtil {
         }
     }
 
-    public <T> T parseObject(String json, Class<T> clazz) {
+    public static <T> T parseObject(String json, Class<T> clazz) {
         try {
             return OBJECT_MAPPER.readValue(json, clazz);
         } catch (JsonProcessingException e) {
@@ -40,7 +38,7 @@ public class JacksonUtil {
         }
     }
 
-    public <T> List<T> parseList(String json, Class<T> clazz) {
+    public static <T> List<T> parseList(String json, Class<T> clazz) {
         try {
             CollectionType javaType = OBJECT_MAPPER.getTypeFactory()
                     .constructCollectionType(List.class, clazz);

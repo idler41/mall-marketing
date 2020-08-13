@@ -1,9 +1,11 @@
 package com.lfx.mall.marketing.service.request;
 
-import com.lfx.mall.marketing.service.base.request.KeyRequest;
+import com.lfx.mall.marketing.service.base.request.PageRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -12,5 +14,11 @@ import lombok.ToString;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class MemberIdRequest extends KeyRequest<Integer> {
+public class ActTaskGroupPageRequest extends PageRequest {
+
+    /**
+     * 活动id
+     */
+    @NotNull
+    private Integer actId;
 }

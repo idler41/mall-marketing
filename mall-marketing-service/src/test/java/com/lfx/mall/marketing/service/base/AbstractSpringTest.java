@@ -1,4 +1,4 @@
-package com.lfx.mall.marketing.persistence.base;
+package com.lfx.mall.marketing.service.base;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

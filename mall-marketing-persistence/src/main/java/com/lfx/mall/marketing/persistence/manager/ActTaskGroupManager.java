@@ -1,5 +1,6 @@
 package com.lfx.mall.marketing.persistence.manager;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lfx.mall.marketing.persistence.dao.ActTaskGroupMapper;
 import com.lfx.mall.marketing.persistence.dao.ActTaskMapper;
@@ -39,5 +40,9 @@ public class ActTaskGroupManager extends ServiceImpl<ActTaskGroupMapper, ActTask
         for (ActTask item : actTaskList) {
             actTaskMapper.updateById(item);
         }
+    }
+
+    public List<ActTaskGroup> pageByActId(Page<ActTaskGroup> page, Integer actId) {
+        return baseMapper.selectPageByActId(page, actId);
     }
 }

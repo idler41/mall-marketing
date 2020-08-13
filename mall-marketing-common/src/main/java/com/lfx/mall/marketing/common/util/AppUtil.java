@@ -1,7 +1,6 @@
 package com.lfx.mall.marketing.common.util;
 
 import com.lfx.mall.marketing.common.constant.AppConstants;
-import lombok.experimental.UtilityClass;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.util.Arrays;
@@ -10,10 +9,9 @@ import java.util.Arrays;
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
  * @date 2020-05-20 17:34:24
  */
-@UtilityClass
 public class AppUtil {
 
-    public String getAllSpringBeanStr(ConfigurableApplicationContext ctx) {
+    public static String getAllSpringBeanStr(ConfigurableApplicationContext ctx) {
         StringBuilder allBeanNameStr = new StringBuilder(500);
         allBeanNameStr.append("----------------- spring beans start -----------------")
                 .append(System.lineSeparator());
