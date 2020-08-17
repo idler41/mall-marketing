@@ -1,6 +1,7 @@
 package com.lfx.mall.marketing.web.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration;
 import org.apache.dubbo.spring.boot.autoconfigure.DubboRelaxedBinding2AutoConfiguration;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
@@ -25,6 +26,7 @@ import org.springframework.context.annotation.Configuration;
 })
 @Configuration
 @ComponentScan(value = "com.lfx.mall.marketing.web")
+@EnableDubbo(scanBasePackages = {"com.lfx.mall.marketing.web"})
 @Slf4j
 public class WebConfig {
 }

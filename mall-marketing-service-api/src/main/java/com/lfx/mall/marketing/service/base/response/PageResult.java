@@ -1,6 +1,8 @@
 package com.lfx.mall.marketing.service.base.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.io.Serializable;
@@ -12,6 +14,8 @@ import java.util.List;
  */
 @Data
 @ToString(callSuper = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class PageResult<T> implements Serializable {
 
     /**
@@ -22,10 +26,10 @@ public class PageResult<T> implements Serializable {
     /**
      * 总记录数
      */
-    private int totalRecord;
+    private long totalRecord;
 
     /**
      * 总页数
      */
-    private int totalPage;
+    private long totalPage;
 }

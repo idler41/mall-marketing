@@ -3,6 +3,7 @@ package com.lfx.mall.marketing.persistence.manager;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lfx.mall.marketing.persistence.base.AbstractSpringTest;
 import com.lfx.mall.marketing.persistence.entity.ActTaskGroup;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,6 +15,11 @@ public class ActTaskGroupManagerTest extends AbstractSpringTest {
 
     @Autowired
     private ActTaskGroupManager manager;
+
+    @BeforeClass
+    public static void setup() {
+        initSysProperty();
+    }
 
     @Test
     public void getById() {

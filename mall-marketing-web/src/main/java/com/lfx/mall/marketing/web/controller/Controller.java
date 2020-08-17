@@ -1,5 +1,7 @@
-package com.lfx.mall.marketing.web;
+package com.lfx.mall.marketing.web.controller;
 
+import com.lfx.mall.marketing.service.ActTaskGroupService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/prize")
 public class Controller {
+
+    @Reference
+    private ActTaskGroupService actTaskGroupService;
 
 
     @GetMapping("/get")

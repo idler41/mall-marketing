@@ -31,6 +31,16 @@
         </dependency>
 
         <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.el</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.lfx.mall-marketing</groupId>
             <artifactId>mall-marketing-persistence</artifactId>
         </dependency>
@@ -38,12 +48,10 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-jdk8</artifactId>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct-processor</artifactId>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>

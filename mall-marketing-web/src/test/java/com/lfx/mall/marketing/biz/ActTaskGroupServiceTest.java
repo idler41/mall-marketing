@@ -1,11 +1,12 @@
-package com.lfx.mall.marketing.service;
+package com.lfx.mall.marketing.biz;
 
-import com.lfx.mall.marketing.service.base.AbstractSpringTest;
+import com.lfx.mall.marketing.base.AbstractSpringTest;
+import com.lfx.mall.marketing.service.ActTaskGroupService;
 import com.lfx.mall.marketing.service.base.request.IdRequest;
 import com.lfx.mall.marketing.service.request.ActTaskGroupPageRequest;
+import org.apache.dubbo.config.annotation.Reference;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
 
 /**
@@ -14,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class ActTaskGroupServiceTest extends AbstractSpringTest {
 
-    @Autowired
+    @Reference
     private ActTaskGroupService actTaskGroupService;
 
     @BeforeClass
