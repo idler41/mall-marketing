@@ -1,10 +1,9 @@
 package com.lfx.mall.marketing.service.request;
 
-import com.lfx.mall.marketing.service.base.request.Request;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,8 +12,7 @@ import java.util.Date;
  */
 @Data
 @ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class ActTaskGroupRequest extends Request {
+public class ActTaskGroupRequest implements Serializable {
 
     /**
      * 任务组id

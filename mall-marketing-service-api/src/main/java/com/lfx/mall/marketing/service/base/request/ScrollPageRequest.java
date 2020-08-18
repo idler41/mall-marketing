@@ -1,7 +1,6 @@
 package com.lfx.mall.marketing.service.base.request;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.validation.constraints.Min;
@@ -14,8 +13,7 @@ import java.io.Serializable;
  */
 @Data
 @ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class ScrollPageRequest<T extends Serializable & Comparable<? super T>> extends Request {
+public class ScrollPageRequest<T extends Serializable & Comparable<? super T>> implements Serializable {
 
     /**
      * 起始数据

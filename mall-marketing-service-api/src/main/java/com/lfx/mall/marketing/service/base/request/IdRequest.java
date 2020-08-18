@@ -1,13 +1,13 @@
 package com.lfx.mall.marketing.service.base.request;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -15,10 +15,9 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @RequiredArgsConstructor(staticName = "of")
-public class IdRequest<T> extends Request {
+public class IdRequest<T> implements Serializable {
     @NonNull
     @NotNull
     private T value;

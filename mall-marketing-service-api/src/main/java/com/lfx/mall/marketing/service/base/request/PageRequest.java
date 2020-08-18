@@ -1,11 +1,11 @@
 package com.lfx.mall.marketing.service.base.request;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -13,8 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class PageRequest extends Request {
+public class PageRequest implements Serializable {
 
     /**
      * 当前页
