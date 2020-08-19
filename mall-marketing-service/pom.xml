@@ -20,6 +20,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo-dependencies-zookeeper</artifactId>
             <type>pom</type>
@@ -43,6 +48,11 @@
         <dependency>
             <groupId>com.lfx.mall-marketing</groupId>
             <artifactId>mall-marketing-persistence</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lfx.demo</groupId>
+            <artifactId>demo-trace</artifactId>
         </dependency>
 
         <dependency>

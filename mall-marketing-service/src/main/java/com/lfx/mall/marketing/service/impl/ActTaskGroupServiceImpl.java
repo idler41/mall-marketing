@@ -12,6 +12,7 @@ import com.lfx.mall.marketing.service.converter.ActTaskGroupConverter;
 import com.lfx.mall.marketing.service.request.ActTaskGroupPageRequest;
 import com.lfx.mall.marketing.service.response.ActTaskGroupResponse;
 import com.lfx.mall.marketing.service.util.PageUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,6 +24,7 @@ import java.util.List;
  * @date 2020-07-30 15:23:16
  */
 @Service
+@Slf4j
 public class ActTaskGroupServiceImpl implements ActTaskGroupService {
 
 
