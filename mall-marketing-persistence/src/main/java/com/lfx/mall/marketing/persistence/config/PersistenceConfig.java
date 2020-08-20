@@ -2,8 +2,10 @@ package com.lfx.mall.marketing.persistence.config;
 
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import com.lfx.mall.marketing.persistence.algorithm.hash.HashCodingHelper;
-import com.lfx.mall.marketing.persistence.algorithm.hash.StringConsistentHashCoding;
+import com.lfx.mall.marketing.persistence.algorithm.hash.DatabaseShardHash;
+import com.lfx.mall.marketing.persistence.algorithm.hash.ShardHashHelper;
+import com.lfx.mall.marketing.persistence.algorithm.hash.StringConsistentHash;
+import com.lfx.mall.marketing.persistence.algorithm.hash.TableShardHash;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shardingsphere.shardingjdbc.spring.boot.SpringBootConfiguration;
 import org.mybatis.spring.annotation.MapperScan;
@@ -51,22 +53,22 @@ public class PersistenceConfig {
     }
 
     @Bean(name = "dbHashCoding")
-    public StringConsistentHashCoding dbHashCoding(
+    public StringConsistentHash dbHashCoding(
             @Value("${sharing.db.node.num}") Integer realNodeCount,
             @Value("${sharing.db.virtual-node.num}") Integer virtualNodeCount
     ) {
-        StringConsistentHashCoding dbHashCoding = new StringConsistentHashCoding(realNodeCount, virtualNodeCount);
-        HashCodingHelper.setDbHashCoding(dbHashCoding);
+        DatabaseShardHash dbHashCoding = new DatabaseShardHash(realNodeCount, virtualNodeCount);
+        ShardHashHelper.databaseShardHash = dbHashCoding;
         return dbHashCoding;
     }
 
     @Bean(name = "tableHashCoding")
-    public StringConsistentHashCoding tableHashCoding(
+    public StringConsistentHash tableHashCoding(
             @Value("${sharing.table.node.num}") Integer realNodeCount,
             @Value("${sharing.table.virtual-node.num}") Integer virtualNodeCount
     ) {
-        StringConsistentHashCoding dbHashCoding = new StringConsistentHashCoding(realNodeCount, virtualNodeCount);
-        HashCodingHelper.setTableHashCoding(dbHashCoding);
-        return dbHashCoding;
+        TableShardHash tableShardHash = new TableShardHash(realNodeCount, virtualNodeCount);
+        ShardHashHelper.tableShardHash = tableShardHash;
+        return tableShardHash;
     }
 }

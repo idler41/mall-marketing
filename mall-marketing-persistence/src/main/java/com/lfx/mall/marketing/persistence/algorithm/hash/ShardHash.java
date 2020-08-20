@@ -2,8 +2,9 @@ package com.lfx.mall.marketing.persistence.algorithm.hash;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-05-20 09:54:46
+ * @date 2020-08-20 15:27:38
  */
-public interface HashCoding<T> {
-    int hashFor(T v);
+public interface ShardHash<T> {
+
+    int hash(T t);
 }
