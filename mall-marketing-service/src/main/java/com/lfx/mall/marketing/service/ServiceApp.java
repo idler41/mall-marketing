@@ -1,11 +1,8 @@
 package com.lfx.mall.marketing.service;
 
-import com.lfx.mall.marketing.common.constant.AppConstants;
-import com.lfx.mall.marketing.common.util.AppUtil;
-import com.lfx.mall.marketing.service.config.ServiceConfig;
+import com.lfx.mall.marketing.service.config.ServiceAutoConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -14,12 +11,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 @Slf4j
 public class ServiceApp {
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(ServiceConfig.class, args);
-
-        if (Boolean.parseBoolean(ctx.getEnvironment().getProperty(AppConstants.Config.PRINT_BEAN_KEY))) {
-            log.info(AppUtil.getAllSpringBeanStr(ctx));
-        }
-
-        log.info("==========[微服务启动成功]==========");
+        SpringApplication.run(ServiceAutoConfiguration.class, args);
     }
 }

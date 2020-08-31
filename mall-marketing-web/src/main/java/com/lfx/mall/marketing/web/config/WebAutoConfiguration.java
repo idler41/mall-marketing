@@ -1,7 +1,7 @@
 package com.lfx.mall.marketing.web.config;
 
 import com.lfx.demo.spring.annotation.EnableWebTrace;
-import com.lfx.mall.marketing.web.interceptor.MonitorInterceptor;
+import com.lfx.demo.weblog.annotation.EnableWebAll;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration;
@@ -13,8 +13,6 @@ import org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactor
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -32,10 +30,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan(value = "com.lfx.mall.marketing.web")
 @EnableDubbo(scanBasePackages = {"com.lfx.mall.marketing.web"})
 @EnableWebTrace
+@EnableWebAll
 @Slf4j
-public class WebConfig implements WebMvcConfigurer {
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MonitorInterceptor()).addPathPatterns("/**");
-    }
+public class WebAutoConfiguration {
+
 }

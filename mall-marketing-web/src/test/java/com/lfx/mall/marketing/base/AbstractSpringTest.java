@@ -3,8 +3,7 @@ package com.lfx.mall.marketing.base;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lfx.mall.marketing.common.util.JacksonUtil;
-import com.lfx.mall.marketing.web.WebApp;
-import com.lfx.mall.marketing.web.config.WebConfig;
+import com.lfx.mall.marketing.web.config.WebAutoConfiguration;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -19,7 +18,7 @@ import java.util.Objects;
  * @date 2020-05-18 16:19:15
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = WebConfig.class)
+@SpringBootTest(classes = WebAutoConfiguration.class)
 public class AbstractSpringTest {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();

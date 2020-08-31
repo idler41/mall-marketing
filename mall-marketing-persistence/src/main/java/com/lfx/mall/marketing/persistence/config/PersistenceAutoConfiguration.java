@@ -42,7 +42,7 @@ import org.springframework.context.annotation.PropertySources;
 @ComponentScan(value = "com.lfx.mall.marketing.persistence")
 @Configuration
 @Slf4j
-public class PersistenceConfig {
+public class PersistenceAutoConfiguration {
 
     /**
      * 分页插件

@@ -38,6 +38,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.lfx.demo</groupId>
+            <artifactId>demo-trace</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>

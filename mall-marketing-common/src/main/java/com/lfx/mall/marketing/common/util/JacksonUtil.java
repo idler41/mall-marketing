@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class JacksonUtil {
 
-    private static final ObjectMapper OBJECT_MAPPER;
+    public static final ObjectMapper OBJECT_MAPPER;
 
     static {
         OBJECT_MAPPER = new ObjectMapper();

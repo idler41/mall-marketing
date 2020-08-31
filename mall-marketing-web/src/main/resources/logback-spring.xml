@@ -12,4 +12,5 @@
     <root level="${logging.level.root}">
         <appender-ref ref="CONSOLE_LOG"/>
     </root>
+
 </configuration>

@@ -1,12 +1,8 @@
 package com.lfx.mall.marketing.persistence;
 
-import com.lfx.mall.marketing.common.constant.AppConstants;
-import com.lfx.mall.marketing.persistence.config.PersistenceConfig;
+import com.lfx.mall.marketing.persistence.config.PersistenceAutoConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
-import org.springframework.context.ConfigurableApplicationContext;
-
-import java.util.Arrays;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -15,38 +11,12 @@ import java.util.Arrays;
 @Slf4j
 public class PersistenceApp {
     public static void main(String[] args) {
-        ConfigurableApplicationContext ctx = SpringApplication.run(PersistenceConfig.class, args);
-
-        if (Boolean.parseBoolean(ctx.getEnvironment().getProperty(AppConstants.Config.PRINT_BEAN_KEY))) {
-            log.info(getAllSpringBeanStr(ctx));
-        }
-
-        log.info("==========[微服务启动成功]==========");
+        SpringApplication.run(PersistenceAutoConfiguration.class, args);
+//        printBuildSql(4);
     }
 
-    private static String getAllSpringBeanStr(ConfigurableApplicationContext ctx) {
-        StringBuilder allBeanNameStr = new StringBuilder(500);
-        allBeanNameStr.append("----------------- spring beans start -----------------")
-                .append(System.lineSeparator());
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        allBeanNameStr.append("beans amount: ").append(beanNames.length)
-                .append(System.lineSeparator());
-        Arrays.sort(beanNames);
-        boolean printBeanImpl = Boolean.parseBoolean(ctx.getEnvironment().getProperty(AppConstants.Config.PRINT_BEAN_IMPL_KEY));
-        for (String name : beanNames) {
-            allBeanNameStr.append(name);
-            if (printBeanImpl) {
-                allBeanNameStr.append("=").append(ctx.getBean(name));
-            }
-            allBeanNameStr.append(System.lineSeparator());
-        }
-        allBeanNameStr.append("----------------- spring beans end -----------------");
-        return allBeanNameStr.toString();
-    }
-
-    public static void printBuildSql() {
+    public static void printBuildSql(int size) {
         System.out.println("==========打印sharding配置信息==========");
-        int size = 4;
         String tableName = "mall_promotion_activity";
 
         System.out.println("spring.shardingsphere.datasource.names=ds$->{0..%size}".replaceFirst("%size", String.valueOf(size - 1)));
