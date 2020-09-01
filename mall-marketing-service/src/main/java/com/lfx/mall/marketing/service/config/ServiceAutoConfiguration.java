@@ -1,6 +1,7 @@
 package com.lfx.mall.marketing.service.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.lfx.demo.spring.config.PrintBeanAutoConfig;
 import com.lfx.mall.marketing.common.util.JacksonUtil;
 import com.lfx.mall.marketing.persistence.config.PersistenceAutoConfiguration;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020-05-20 17:31:24
  */
 @ImportAutoConfiguration({
+        PrintBeanAutoConfig.class,
         DubboRelaxedBinding2AutoConfiguration.class,
         DubboAutoConfiguration.class,
         PersistenceAutoConfiguration.class

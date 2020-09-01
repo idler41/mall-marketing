@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 @Slf4j
 public class ActTaskGroupController {
 
-    @Reference
+    @Reference(check = false)
     private ActTaskGroupService actTaskGroupService;
 
 

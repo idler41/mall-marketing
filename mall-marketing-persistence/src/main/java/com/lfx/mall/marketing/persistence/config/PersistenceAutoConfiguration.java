@@ -2,6 +2,7 @@ package com.lfx.mall.marketing.persistence.config;
 
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import com.lfx.demo.spring.config.PrintBeanAutoConfig;
 import com.lfx.mall.marketing.persistence.algorithm.hash.DatabaseShardHash;
 import com.lfx.mall.marketing.persistence.algorithm.hash.ShardHashHelper;
 import com.lfx.mall.marketing.persistence.algorithm.hash.StringConsistentHash;
@@ -27,6 +28,7 @@ import org.springframework.context.annotation.PropertySources;
  * @date 2020-05-16 18:32:18
  */
 @ImportAutoConfiguration({
+        PrintBeanAutoConfig.class,
         SpringBootConfiguration.class,
 //        DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,

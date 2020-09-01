@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 @Slf4j
 public class ServiceApp {
     public static void main(String[] args) {
+        // 建议启动时添加参数：-Ddubbo.application.logger=slf4j
         SpringApplication.run(ServiceAutoConfiguration.class, args);
     }
 }
