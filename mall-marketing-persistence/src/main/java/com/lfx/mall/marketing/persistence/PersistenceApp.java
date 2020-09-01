@@ -1,6 +1,6 @@
 package com.lfx.mall.marketing.persistence;
 
-import com.lfx.mall.marketing.persistence.config.PersistenceAutoConfiguration;
+import com.lfx.mall.marketing.persistence.config.PersistenceAutoConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 
@@ -11,7 +11,7 @@ import org.springframework.boot.SpringApplication;
 @Slf4j
 public class PersistenceApp {
     public static void main(String[] args) {
-        SpringApplication.run(PersistenceAutoConfiguration.class, args);
+        SpringApplication.run(PersistenceAutoConfig.class, args);
 //        printBuildSql(4);
     }
 

@@ -1,8 +1,9 @@
 package com.lfx.mall.marketing.persistence.config;
 
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
+import com.baomidou.mybatisplus.autoconfigure.MybatisPlusPropertiesCustomizer;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
-import com.lfx.demo.spring.config.PrintBeanAutoConfig;
+import com.lfx.demo.spring.config.BeanPrintAutoConfig;
 import com.lfx.mall.marketing.persistence.algorithm.hash.DatabaseShardHash;
 import com.lfx.mall.marketing.persistence.algorithm.hash.ShardHashHelper;
 import com.lfx.mall.marketing.persistence.algorithm.hash.StringConsistentHash;
@@ -28,7 +29,7 @@ import org.springframework.context.annotation.PropertySources;
  * @date 2020-05-16 18:32:18
  */
 @ImportAutoConfiguration({
-        PrintBeanAutoConfig.class,
+        BeanPrintAutoConfig.class,
         SpringBootConfiguration.class,
 //        DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,
@@ -44,7 +45,13 @@ import org.springframework.context.annotation.PropertySources;
 @ComponentScan(value = "com.lfx.mall.marketing.persistence")
 @Configuration
 @Slf4j
-public class PersistenceAutoConfiguration {
+public class PersistenceAutoConfig {
+
+    @Bean
+    public MybatisPlusPropertiesCustomizer plusPropertiesCustomizer() {
+        // mybatis-plus.global-config属性都使用的是硬编码的默认值，配置文件不起作用，官方推荐该方法修改属性
+        return plusProperties -> plusProperties.getGlobalConfig().setBanner(false);
+    }
 
     /**
      * 分页插件

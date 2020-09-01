@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -24,12 +23,12 @@ import javax.validation.constraints.NotNull;
 @Slf4j
 public class ActTaskGroupController {
 
-    @Reference(check = false)
+    @Reference
     private ActTaskGroupService actTaskGroupService;
 
 
     @GetMapping("/get")
-    public void sayHello(@Valid @NotNull Integer id) {
+    public void sayHello(Integer id) {
         actTaskGroupService.get(IdRequest.of(id));
     }
 

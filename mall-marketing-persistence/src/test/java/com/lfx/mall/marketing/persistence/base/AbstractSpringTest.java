@@ -3,7 +3,7 @@ package com.lfx.mall.marketing.persistence.base;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lfx.mall.marketing.common.util.JacksonUtil;
-import com.lfx.mall.marketing.persistence.config.PersistenceAutoConfiguration;
+import com.lfx.mall.marketing.persistence.config.PersistenceAutoConfig;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -18,7 +18,7 @@ import java.util.Objects;
  * @date 2020-05-18 16:19:15
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = PersistenceAutoConfiguration.class)
+@SpringBootTest(classes = PersistenceAutoConfig.class)
 public class AbstractSpringTest {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();

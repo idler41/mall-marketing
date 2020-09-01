@@ -1,13 +1,12 @@
 package com.lfx.mall.marketing.web.config;
 
-import com.lfx.demo.spring.annotation.EnableWebTrace;
-import com.lfx.demo.spring.config.PrintBeanAutoConfig;
+import com.lfx.demo.spring.annotation.EnableTrace;
+import com.lfx.demo.spring.config.BeanPrintAutoConfig;
 import com.lfx.demo.weblog.annotation.EnableWebAll;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.apache.dubbo.spring.boot.autoconfigure.DubboAutoConfiguration;
 import org.apache.dubbo.spring.boot.autoconfigure.DubboRelaxedBinding2AutoConfiguration;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration;
 import org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration;
@@ -21,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020-05-22 15:10:36
  */
 @ImportAutoConfiguration({
-        PrintBeanAutoConfig.class,
+        BeanPrintAutoConfig.class,
         DubboRelaxedBinding2AutoConfiguration.class,
         DubboAutoConfiguration.class,
         DispatcherServletAutoConfiguration.class,
@@ -32,7 +31,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(value = "com.lfx.mall.marketing.web")
 @EnableDubbo(scanBasePackages = {"com.lfx.mall.marketing.web"})
-@EnableWebTrace
+@EnableTrace
 @EnableWebAll
 @Slf4j
 public class WebAutoConfiguration {
