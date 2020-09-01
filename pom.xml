@@ -80,7 +80,7 @@
 
             <dependency>
                 <groupId>com.lfx.demo</groupId>
-                <artifactId>demo-weblog-starter</artifactId>
+                <artifactId>demo-web-starter</artifactId>
                 <version>${demo-all.version}</version>
             </dependency>
 
