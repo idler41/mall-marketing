@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lfx.mall.marketing.persistence.dao.ActivityRuleMapper">
+    <resultMap id="BaseResultMap" type="com.lfx.mall.marketing.persistence.entity.ActivityRule">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="act_id" jdbcType="INTEGER" property="actId" />
+        <result column="rule_json" jdbcType="VARCHAR" property="ruleJson" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, act_id, rule_json
+    </sql>
+</mapper>
