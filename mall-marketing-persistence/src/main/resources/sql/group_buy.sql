@@ -21,6 +21,49 @@ PRIMARY KEY ( `id` ),
 KEY `idx_act_id` ( `act_id` ) 
 ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COMMENT = '活动规则表';
 
+-- ----------------------------
+-- Table structure for t_act_task
+-- ----------------------------
+DROP TABLE IF EXISTS `t_act_task`;
+CREATE TABLE `t_act_task` (
+`id` INT ( 11 ) NOT NULL AUTO_INCREMENT COMMENT '任务id',
+`act_id` INT ( 11 ) NOT NULL COMMENT '活动id',
+`group_id` INT ( 11 ) NOT NULL COMMENT '任务组id',
+`task_name` VARCHAR ( 100 ) NOT NULL COMMENT '任务名称',
+`task_type` INT ( 11 ) NOT NULL COMMENT '任务类型',
+`target_value` VARCHAR ( 64 ) NOT NULL COMMENT '任务完成目标值',
+`flag` INT ( 11 ) NOT NULL COMMENT '循环类型 0--单次任务 1--重复任务',
+`reward_type` INT ( 11 ) NOT NULL COMMENT '任务组奖励类型',
+`reward_value` VARCHAR ( 64 ) NOT NULL COMMENT '奖励值',
+`task_order` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务排序',
+`task_status` INT ( 1 ) NOT NULL DEFAULT 0 COMMENT '当前状态 0--停用  1--启用',
+`is_delete` TINYINT ( 1 ) NOT NULL DEFAULT 0 COMMENT '逻辑删除 0-否 1-是',
+`create_time` TIMESTAMP ( 0 ) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+`update_time` TIMESTAMP ( 0 ) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ( 0 ) COMMENT '更新时间',
+PRIMARY KEY ( `id` ) USING BTREE
+) ENGINE = INNODB CHARACTER
+SET = utf8mb4 COMMENT = '任务表';
+
+-- ----------------------------
+-- Table structure for t_act_task_group
+-- ----------------------------
+DROP TABLE IF EXISTS `t_act_task_group`;
+CREATE TABLE `t_act_task_group` (
+`id` INT ( 11 ) NOT NULL AUTO_INCREMENT COMMENT '任务组id',
+`act_id` INT ( 11 ) NOT NULL COMMENT '活动id',
+`group_name` VARCHAR ( 64 ) NOT NULL COMMENT '任务组名称',
+`group_type` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务组类型',
+`reward_type` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务组奖励类型',
+`reward_value` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务组奖励数量',
+`extend_json` VARCHAR ( 64 ) NOT NULL DEFAULT '' COMMENT '扩展json',
+`group_status` INT ( 1 ) NOT NULL DEFAULT 0 COMMENT '当前状态 0--停用  1--启用',
+`is_delete` TINYINT ( 1 ) NOT NULL DEFAULT 0 COMMENT '逻辑删除 0-否 1-是',
+`create_time` TIMESTAMP ( 0 ) NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+`update_time` TIMESTAMP ( 0 ) NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP ( 0 ) COMMENT '更新时间',
+PRIMARY KEY ( `id` ) USING BTREE
+) ENGINE = INNODB CHARACTER
+SET = utf8mb4 COMMENT = '任务组表';
+
 CREATE TABLE `t_group_spu` (
 `id` INT ( 11 ) NOT NULL AUTO_INCREMENT,
 `act_id` INT ( 11 ) NOT NULL COMMENT '活动id',
