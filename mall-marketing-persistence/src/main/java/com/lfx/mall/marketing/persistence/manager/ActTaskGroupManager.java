@@ -1,9 +1,12 @@
 package com.lfx.mall.marketing.persistence.manager;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lfx.mall.marketing.persistence.entity.ActTaskGroup;
 import com.lfx.mall.marketing.persistence.dao.ActTaskGroupMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
@@ -12,4 +15,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ActTaskGroupManager extends ServiceImpl<ActTaskGroupMapper, ActTaskGroup> {
 
+    public List<ActTaskGroup> pageByActId(Page<ActTaskGroup> page, Integer actId) {
+        return null;
+    }
 }
