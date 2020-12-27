@@ -2,13 +2,12 @@ package com.lfx.mall.marketing.persistence.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-07-16 18:54:04
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-27 15:35:40
  */
 @TableName("t_act_task_group")
 @Data
@@ -45,19 +44,14 @@ public class ActTaskGroup implements Serializable {
     private Integer rewardValue;
 
     /**
-     * 扩展json
-     */
-    private String extendJson;
-
-    /**
      * 当前状态 0--停用  1--启用
      */
     private Integer groupStatus;
 
     /**
-     * 逻辑删除 0-否 1-是
+     * 删除标识  0-未删除 1-已删除
      */
-    private Integer deleteFlag;
+    private Integer isDelete;
 
     /**
      * 创建时间

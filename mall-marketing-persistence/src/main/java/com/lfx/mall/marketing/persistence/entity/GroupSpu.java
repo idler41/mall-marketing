@@ -6,15 +6,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-09-03 16:48:17
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-27 15:35:40
  */
 @TableName("t_group_spu")
 @Data
 public class GroupSpu implements Serializable {
 
     /**
-     * 
+     * 活动商品id
      */
     private Integer id;
 
@@ -81,7 +81,7 @@ public class GroupSpu implements Serializable {
     /**
      * 删除标识  0-未删除 1-已删除
      */
-    private Integer deleteFlag;
+    private Integer isDelete;
 
     /**
      * 创建时间

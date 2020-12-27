@@ -14,11 +14,11 @@ public abstract class AbstractTableAlgorithm<T extends Comparable<?>> implements
     /**
      * datasource 前缀
      */
-    private final String tableSeparator = "_";
+    private static final String TABLE_SEPARATOR = "_";
 
     @Override
     public String doSharding(Collection<String> availableTargetNames, PreciseShardingValue<T> shardingValue) {
-        return shardingValue.getLogicTableName() + tableSeparator + resolveIndex(shardingValue.getColumnName(), shardingValue.getValue());
+        return shardingValue.getLogicTableName() + TABLE_SEPARATOR + resolveIndex(shardingValue.getColumnName(), shardingValue.getValue());
     }
 
     /**

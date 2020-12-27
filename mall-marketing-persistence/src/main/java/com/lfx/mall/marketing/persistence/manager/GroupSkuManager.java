@@ -6,8 +6,8 @@ import com.lfx.mall.marketing.persistence.dao.GroupSkuMapper;
 import org.springframework.stereotype.Service;
 
 /**
- * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-09-03 16:51:00
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-27 15:43:21
  */
 @Service
 public class GroupSkuManager extends ServiceImpl<GroupSkuMapper, GroupSku> {

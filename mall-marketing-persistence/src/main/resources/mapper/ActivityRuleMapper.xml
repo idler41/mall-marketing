@@ -5,8 +5,11 @@
         <id column="id" jdbcType="INTEGER" property="id" />
         <result column="act_id" jdbcType="INTEGER" property="actId" />
         <result column="rule_json" jdbcType="VARCHAR" property="ruleJson" />
+        <result column="is_delete" jdbcType="BIT" property="isDelete" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     </resultMap>
     <sql id="Base_Column_List">
-        id, act_id, rule_json
+        id, act_id, rule_json, is_delete, create_time, update_time
     </sql>
 </mapper>

@@ -15,12 +15,12 @@
         <result column="audit_status" jdbcType="TINYINT" property="auditStatus" />
         <result column="spu_status" jdbcType="TINYINT" property="spuStatus" />
         <result column="group_finish_amount" jdbcType="INTEGER" property="groupFinishAmount" />
-        <result column="delete_flag" jdbcType="TINYINT" property="deleteFlag" />
+        <result column="is_delete" jdbcType="BIT" property="isDelete" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     </resultMap>
     <sql id="Base_Column_List">
         id, act_id, act_rule_id, spu_id, title, spu_name, spu_desc, spu_img, spu_price, seller_id, 
-        audit_status, spu_status, group_finish_amount, delete_flag, create_time, update_time
+        audit_status, spu_status, group_finish_amount, is_delete, create_time, update_time
     </sql>
 </mapper>

@@ -9,20 +9,21 @@
         <result column="sku_name" jdbcType="VARCHAR" property="skuName" />
         <result column="sku_desc" jdbcType="VARCHAR" property="skuDesc" />
         <result column="sku_img" jdbcType="VARCHAR" property="skuImg" />
-        <result column="first_show_flag" jdbcType="TINYINT" property="firstShowFlag" />
+        <result column="is_first_show" jdbcType="BIT" property="isFirstShow" />
         <result column="sku_status" jdbcType="TINYINT" property="skuStatus" />
         <result column="mall_price" jdbcType="BIGINT" property="mallPrice" />
         <result column="act_price" jdbcType="BIGINT" property="actPrice" />
         <result column="act_commission_rate" jdbcType="INTEGER" property="actCommissionRate" />
         <result column="act_commission" jdbcType="INTEGER" property="actCommission" />
-        <result column="act_scale_rate" jdbcType="INTEGER" property="actScaleRate" />
-        <result column="act_scale" jdbcType="INTEGER" property="actScale" />
+        <result column="act_service_rate" jdbcType="INTEGER" property="actServiceRate" />
+        <result column="act_service" jdbcType="INTEGER" property="actService" />
+        <result column="is_delete" jdbcType="BIT" property="isDelete" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     </resultMap>
     <sql id="Base_Column_List">
-        id, act_id, act_spu_id, sku_id, sku_name, sku_desc, sku_img, first_show_flag, sku_status, 
-        mall_price, act_price, act_commission_rate, act_commission, act_scale_rate, act_scale, 
-        create_time, update_time
+        id, act_id, act_spu_id, sku_id, sku_name, sku_desc, sku_img, is_first_show, sku_status, 
+        mall_price, act_price, act_commission_rate, act_commission, act_service_rate, act_service, 
+        is_delete, create_time, update_time
     </sql>
 </mapper>

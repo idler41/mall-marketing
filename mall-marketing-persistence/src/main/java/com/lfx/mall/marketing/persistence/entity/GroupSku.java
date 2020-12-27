@@ -6,15 +6,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-09-03 16:48:17
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-27 15:35:40
  */
 @TableName("t_group_sku")
 @Data
 public class GroupSku implements Serializable {
 
     /**
-     * 
+     * 活动货品id
      */
     private Integer id;
 
@@ -51,7 +51,7 @@ public class GroupSku implements Serializable {
     /**
      * 优先展示 0-否 1-是
      */
-    private Integer firstShowFlag;
+    private Integer isFirstShow;
 
     /**
      * 货品状态 0-下架 1-上架
@@ -81,12 +81,17 @@ public class GroupSku implements Serializable {
     /**
      * 服务费比例 如: 20代表20%
      */
-    private Integer actScaleRate;
+    private Integer actServiceRate;
 
     /**
      * 服务费金额(单位分)
      */
-    private Integer actScale;
+    private Integer actService;
+
+    /**
+     * 删除标识  0-未删除 1-已删除
+     */
+    private Integer isDelete;
 
     /**
      * 创建时间

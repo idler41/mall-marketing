@@ -1,7 +1,7 @@
 package com.lfx.mall.marketing.persistence.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lfx.mall.marketing.persistence.entity.ActivityRule;
+import com.lfx.mall.marketing.persistence.entity.GroupSuccessLog;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
  * @date 2020-12-27 15:42:35
  */
 @Repository
-public interface ActivityRuleMapper extends BaseMapper<ActivityRule> {
+public interface GroupSuccessLogMapper extends BaseMapper<GroupSuccessLog> {
 
 }

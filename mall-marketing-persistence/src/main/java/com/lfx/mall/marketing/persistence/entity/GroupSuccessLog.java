@@ -6,15 +6,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-09-03 16:48:17
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-27 15:35:40
  */
-@TableName("t_group_finish_log")
+@TableName("t_group_success_log")
 @Data
-public class GroupFinishLog implements Serializable {
+public class GroupSuccessLog implements Serializable {
 
     /**
-     * 
+     * 成团日志id
      */
     private Integer id;
 
@@ -29,9 +29,29 @@ public class GroupFinishLog implements Serializable {
     private String groupId;
 
     /**
+     * 团长用户id
+     */
+    private Integer leaderId;
+
+    /**
+     * 团开始时间
+     */
+    private Date startTime;
+
+    /**
      * 拼团完成时间
      */
     private Date finishTime;
+
+    /**
+     * 最后成团用户id
+     */
+    private Integer lastMemberId;
+
+    /**
+     * 删除标识  0-未删除 1-已删除
+     */
+    private Integer isDelete;
 
     /**
      * 创建时间

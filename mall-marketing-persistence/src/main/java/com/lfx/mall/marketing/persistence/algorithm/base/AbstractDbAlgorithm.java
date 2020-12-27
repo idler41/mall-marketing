@@ -14,11 +14,11 @@ public abstract class AbstractDbAlgorithm<T extends Comparable<?>> implements Pr
     /**
      * datasource 前缀
      */
-    private final String dataSourcePrefix = "ds";
+    private static final String DATASOURCE_PREFIX = "ds";
 
     @Override
     public String doSharding(Collection<String> availableTargetNames, PreciseShardingValue<T> shardingValue) {
-        return dataSourcePrefix + resolveIndex(shardingValue.getColumnName(), shardingValue.getValue());
+        return DATASOURCE_PREFIX + resolveIndex(shardingValue.getColumnName(), shardingValue.getValue());
     }
 
     /**

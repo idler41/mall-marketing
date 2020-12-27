@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lfx.mall.marketing.persistence.dao.GroupShoppingMapper">
+    <resultMap id="BaseResultMap" type="com.lfx.mall.marketing.persistence.entity.GroupShopping">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
+        <result column="act_id" jdbcType="INTEGER" property="actId" />
+        <result column="act_spu_id" jdbcType="INTEGER" property="actSpuId" />
+        <result column="act_sku_id" jdbcType="INTEGER" property="actSkuId" />
+        <result column="spu_id" jdbcType="INTEGER" property="spuId" />
+        <result column="sku_id" jdbcType="INTEGER" property="skuId" />
+        <result column="spu_name" jdbcType="VARCHAR" property="spuName" />
+        <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+        <result column="seller_name" jdbcType="VARCHAR" property="sellerName" />
+        <result column="price" jdbcType="BIGINT" property="price" />
+        <result column="number" jdbcType="INTEGER" property="number" />
+        <result column="leader_id" jdbcType="INTEGER" property="leaderId" />
+        <result column="leader_nick_name" jdbcType="VARCHAR" property="leaderNickName" />
+        <result column="leader_avatar" jdbcType="VARCHAR" property="leaderAvatar" />
+        <result column="order_sn" jdbcType="VARCHAR" property="orderSn" />
+        <result column="order_psn" jdbcType="VARCHAR" property="orderPsn" />
+        <result column="id_red_packet" jdbcType="BIT" property="idRedPacket" />
+        <result column="group_type" jdbcType="BIT" property="groupType" />
+        <result column="group_status" jdbcType="TINYINT" property="groupStatus" />
+        <result column="group_size" jdbcType="INTEGER" property="groupSize" />
+        <result column="group_member_amount" jdbcType="INTEGER" property="groupMemberAmount" />
+        <result column="expire_time" jdbcType="TIMESTAMP" property="expireTime" />
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+        <result column="finish_time" jdbcType="TIMESTAMP" property="finishTime" />
+        <result column="robot_work_minutes" jdbcType="INTEGER" property="robotWorkMinutes" />
+        <result column="robot_work_min_minutes" jdbcType="INTEGER" property="robotWorkMinMinutes" />
+        <result column="robot_work_max_minutes" jdbcType="INTEGER" property="robotWorkMaxMinutes" />
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, parent_id, act_id, act_spu_id, act_sku_id, spu_id, sku_id, spu_name, seller_id, 
+        seller_name, price, number, leader_id, leader_nick_name, leader_avatar, order_sn, 
+        order_psn, id_red_packet, group_type, group_status, group_size, group_member_amount, 
+        expire_time, start_time, finish_time, robot_work_minutes, robot_work_min_minutes, 
+        robot_work_max_minutes, create_time, update_time
+    </sql>
+</mapper>

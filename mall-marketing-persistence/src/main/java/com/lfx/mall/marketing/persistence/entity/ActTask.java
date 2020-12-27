@@ -2,13 +2,12 @@ package com.lfx.mall.marketing.persistence.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
- * @date 2020-07-16 18:54:04
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-27 15:35:40
  */
 @TableName("t_act_task")
 @Data
@@ -27,7 +26,7 @@ public class ActTask implements Serializable {
     /**
      * 任务组id
      */
-    private Integer groupId;
+    private Integer taskGroupId;
 
     /**
      * 任务名称
@@ -42,10 +41,10 @@ public class ActTask implements Serializable {
     /**
      * 任务完成目标值
      */
-    private Integer targetValue;
+    private String targetValue;
 
     /**
-     * 重复执行 0--单次执行 1--重复执行
+     * 循环类型 0--单次任务 1--重复任务
      */
     private Integer repeatFlag;
 
@@ -70,9 +69,9 @@ public class ActTask implements Serializable {
     private Integer taskStatus;
 
     /**
-     * 逻辑删除 0-否 1-是
+     * 删除标识  0-未删除 1-已删除
      */
-    private Integer deleteFlag;
+    private Integer isDelete;
 
     /**
      * 创建时间

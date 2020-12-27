@@ -10,12 +10,12 @@
         <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
         <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
         <result column="preheat_time" jdbcType="INTEGER" property="preheatTime" />
-        <result column="delete_flag" jdbcType="TINYINT" property="deleteFlag" />
+        <result column="is_delete" jdbcType="BIT" property="isDelete" />
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     </resultMap>
     <sql id="Base_Column_List">
         id, name, introduction, act_status, act_type, start_time, end_time, preheat_time, 
-        delete_flag, create_time, update_time
+        is_delete, create_time, update_time
     </sql>
 </mapper>

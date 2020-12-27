@@ -29,6 +29,6 @@ public class ActTaskGroupManagerTest extends AbstractSpringTest {
     @Test
     public void pageByActId() {
         Page<ActTaskGroup> page = new Page<>(1, 10);
-        System.out.println(toJsonStr(manager.pageByActId(page, 0), true));
+        System.out.println(toJsonStr(manager.page(page), true));
     }
 }
