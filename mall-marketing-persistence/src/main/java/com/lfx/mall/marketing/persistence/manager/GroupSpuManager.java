@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-27 15:43:21
+ * @date 2020-12-30 15:17:05
  */
 @Service
 public class GroupSpuManager extends ServiceImpl<GroupSpuMapper, GroupSpu> {

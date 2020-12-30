@@ -5,7 +5,7 @@ import org.mapstruct.factory.Mappers;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-27 16:28:36
+ * @date 2020-12-30 15:28:41
  */
 @Mapper
 public interface ActivityConverter {

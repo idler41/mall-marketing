@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-27 15:47:13
+ * @date 2020-12-30 15:16:48
  */
 @TableName("t_group_shopping")
 @Data

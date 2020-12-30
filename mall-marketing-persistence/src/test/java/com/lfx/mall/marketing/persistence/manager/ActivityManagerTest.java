@@ -8,10 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author <a href="mailto:idler41@163.con">idler41</a>
  * @date 2020-12-30 15:17:05
  */
-public class ActTaskGroupManagerTest extends AbstractSpringTest {
+public class ActivityManagerTest extends AbstractSpringTest {
 
     @Autowired
-    private ActTaskGroupManager manager;
+    private ActivityManager manager;
 
     @BeforeClass
     public static void setup() {

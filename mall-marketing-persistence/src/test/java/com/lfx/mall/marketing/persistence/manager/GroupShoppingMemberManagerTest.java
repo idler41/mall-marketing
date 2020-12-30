@@ -2,10 +2,13 @@ package com.lfx.mall.marketing.persistence.manager;
 
 import com.lfx.mall.marketing.persistence.base.AbstractSpringTest;
 import org.junit.BeforeClass;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class GroupShoppingMemberTest extends AbstractSpringTest {
+/**
+ * @author <a href="mailto:idler41@163.con">idler41</a>
+ * @date 2020-12-30 15:16:48
+ */
+public class GroupShoppingMemberManagerTest extends AbstractSpringTest {
 
     @Autowired
     private GroupShoppingMemberManager manager;
@@ -13,10 +16,5 @@ public class GroupShoppingMemberTest extends AbstractSpringTest {
     @BeforeClass
     public static void setup() {
         initSysProperty();
-    }
-
-    @Test
-    public void getByMemberId() {
-        System.out.println(manager.getByGroupId("1"));
     }
 }

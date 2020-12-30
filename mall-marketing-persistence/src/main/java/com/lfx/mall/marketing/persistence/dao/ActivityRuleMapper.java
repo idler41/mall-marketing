@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-27 15:42:35
+ * @date 2020-12-30 15:17:05
  */
 @Repository
 public interface ActivityRuleMapper extends BaseMapper<ActivityRule> {
