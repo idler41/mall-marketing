@@ -1,5 +1,6 @@
 package com.lfx.mall.marketing.persistence.config;
 
+import com.alicp.jetcache.autoconfigure.JetCacheAutoConfiguration;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration;
 import com.baomidou.mybatisplus.autoconfigure.MybatisPlusPropertiesCustomizer;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -34,7 +35,8 @@ import org.springframework.context.annotation.PropertySources;
 //        DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class,
         TransactionAutoConfiguration.class,
-        MybatisPlusAutoConfiguration.class
+        MybatisPlusAutoConfiguration.class,
+        JetCacheAutoConfiguration.class
 })
 @PropertySources({
         @PropertySource("classpath:/application.properties"),

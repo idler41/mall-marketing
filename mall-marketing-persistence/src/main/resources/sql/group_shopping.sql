@@ -15,8 +15,8 @@ CREATE TABLE `t_activity` (
 PRIMARY KEY ( `id` ) USING BTREE
 ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COMMENT = '活动表';
 
-DROP TABLE IF EXISTS `t_activity_rule`;
-CREATE TABLE `t_activity_rule` (
+DROP TABLE IF EXISTS `t_act_rule`;
+CREATE TABLE `t_act_rule` (
 `id` INT ( 11 ) NOT NULL AUTO_INCREMENT COMMENT '活动规则id',
 `act_id` INT ( 11 ) NOT NULL COMMENT '活动id',
 `rule_json` VARCHAR ( 2000 ) NOT NULL DEFAULT '' COMMENT '活动规则json',
@@ -25,49 +25,6 @@ CREATE TABLE `t_activity_rule` (
 `update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
 PRIMARY KEY ( `id` ) USING BTREE
 ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COMMENT = '活动规则表';
-
--- ----------------------------
--- Table structure for t_act_task
--- ----------------------------
-DROP TABLE IF EXISTS `t_act_task`;
-CREATE TABLE `t_act_task` (
-`id` INT ( 11 ) NOT NULL AUTO_INCREMENT COMMENT '任务id',
-`act_id` INT ( 11 ) NOT NULL COMMENT '活动id',
-`task_group_id` INT ( 11 ) NOT NULL COMMENT '任务组id',
-`task_name` VARCHAR ( 100 ) NOT NULL COMMENT '任务名称',
-`task_type` INT ( 11 ) NOT NULL COMMENT '任务类型',
-`target_value` VARCHAR ( 64 ) NOT NULL COMMENT '任务完成目标值',
-`repeat_flag` TINYINT ( 1 ) NOT NULL COMMENT '循环类型 0--单次任务 1--重复任务',
-`reward_type` INT ( 11 ) NOT NULL COMMENT '任务组奖励类型',
-`reward_value` VARCHAR ( 64 ) NOT NULL COMMENT '奖励值',
-`task_order` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务排序',
-`task_status` INT ( 1 ) NOT NULL DEFAULT 0 COMMENT '当前状态 0--停用  1--启用',
-`is_delete` TINYINT ( 1 ) NOT NULL DEFAULT '0' COMMENT '删除标识  0-未删除 1-已删除',
-`create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-`update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-PRIMARY KEY ( `id` ) USING BTREE,
-KEY `idx_task_group_id` ( `task_group_id` )
-) ENGINE = INNODB CHARACTER
-SET = utf8mb4 COMMENT = '任务表';
-
--- ----------------------------
--- Table structure for t_act_task_group
--- ----------------------------
-DROP TABLE IF EXISTS `t_act_task_group`;
-CREATE TABLE `t_act_task_group` (
-`id` INT ( 11 ) NOT NULL AUTO_INCREMENT COMMENT '任务组id',
-`act_id` INT ( 11 ) NOT NULL COMMENT '活动id',
-`group_name` VARCHAR ( 64 ) NOT NULL COMMENT '任务组名称',
-`group_type` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务组类型',
-`reward_type` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务组奖励类型',
-`reward_value` INT ( 11 ) NOT NULL DEFAULT 0 COMMENT '任务组奖励数量',
-`group_status` INT ( 1 ) NOT NULL DEFAULT 0 COMMENT '当前状态 0--停用  1--启用',
-`is_delete` TINYINT ( 1 ) NOT NULL DEFAULT '0' COMMENT '删除标识  0-未删除 1-已删除',
-`create_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-`update_time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-PRIMARY KEY ( `id` ) USING BTREE
-) ENGINE = INNODB CHARACTER
-SET = utf8mb4 COMMENT = '任务组表';
 
 DROP TABLE IF EXISTS `t_group_spu`;
 CREATE TABLE `t_group_spu` (
@@ -118,8 +75,8 @@ KEY `idx_act_spu_id` ( `act_spu_id` ),
 KEY `idx_sku_id` ( `sku_id` ) 
 ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COMMENT = '拼团货品表';
 
-DROP TABLE IF EXISTS `t_group_success_log`;
-CREATE TABLE `t_group_success_log` (
+DROP TABLE IF EXISTS `t_group_log`;
+CREATE TABLE `t_group_log` (
 `id` INT ( 11 ) NOT NULL AUTO_INCREMENT COMMENT '成团日志id',
 `act_spu_id` INT ( 11 ) NOT NULL COMMENT '活动商品id',
 `group_id` VARCHAR ( 32 ) NOT NULL COMMENT '开团id',
@@ -173,8 +130,8 @@ KEY `idx_order_sn` ( `order_sn` ),
 KEY `idx_leader_id` ( `leader_id` ) 
 ) ENGINE = INNODB DEFAULT CHARSET = utf8mb4 COMMENT = '拼团-团信息表';
 
-DROP TABLE IF EXISTS `t_group_shopping_member`;
-CREATE TABLE `t_group_shopping_member` (
+DROP TABLE IF EXISTS `t_group_member`;
+CREATE TABLE `t_group_member` (
 `id` VARCHAR ( 32 ) NOT NULL COMMENT '参团id',
 `group_id` VARCHAR ( 32 ) NOT NULL COMMENT '开团id',
 `member_id` INT ( 11 ) NOT NULL COMMENT '团成员用户id',

@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-30 15:17:05
+ * @date 2020-12-31 15:11:49
  */
-public class ActTaskGroupManagerTest extends AbstractSpringTest {
+public class GroupLogManagerTest extends AbstractSpringTest {
 
     @Autowired
-    private ActTaskGroupManager manager;
+    private GroupLogManager manager;
 
     @BeforeClass
     public static void setup() {

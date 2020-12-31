@@ -1,8 +1,8 @@
 package com.lfx.mall.marketing.persistence.manager;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lfx.mall.marketing.persistence.entity.GroupSpu;
-import com.lfx.mall.marketing.persistence.dao.GroupSpuMapper;
+import com.lfx.mall.marketing.persistence.entity.ActRule;
+import com.lfx.mall.marketing.persistence.dao.ActRuleMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Service;
  * @date 2020-12-31 15:11:49
  */
 @Service
-public class GroupSpuManager extends ServiceImpl<GroupSpuMapper, GroupSpu> {
+public class ActRuleManager extends ServiceImpl<ActRuleMapper, ActRule> {
 
 }

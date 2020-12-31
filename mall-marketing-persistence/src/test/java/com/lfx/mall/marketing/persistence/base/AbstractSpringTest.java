@@ -1,7 +1,5 @@
 package com.lfx.mall.marketing.persistence.base;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lfx.mall.marketing.common.util.JacksonUtil;
 import com.lfx.mall.marketing.persistence.config.PersistenceConfig;
 import org.junit.runner.RunWith;
@@ -21,8 +19,6 @@ import java.util.Objects;
 @SpringBootTest(classes = PersistenceConfig.class)
 public class AbstractSpringTest {
 
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
     public static void initSysProperty() {
         System.setProperty("apollo.configService", "http://10.0.46.45:8080");
         System.setProperty("dubbo.application.qosPort", "9003");
@@ -36,11 +32,7 @@ public class AbstractSpringTest {
     }
 
     public String toJsonStr(Object val, boolean prettyFormat) {
-        try {
-            return prettyFormat ? OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(val) : OBJECT_MAPPER.writeValueAsString(val);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
+        return JacksonUtil.toJsonStr(val, prettyFormat);
     }
 
     public static <T> T readJsonFile(String fileName, Class<T> clazz) {

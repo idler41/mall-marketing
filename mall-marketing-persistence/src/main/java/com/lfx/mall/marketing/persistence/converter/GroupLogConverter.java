@@ -5,10 +5,10 @@ import org.mapstruct.factory.Mappers;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-30 15:17:05
+ * @date 2020-12-31 15:11:49
  */
 @Mapper
-public interface GroupSuccessLogConverter {
+public interface GroupLogConverter {
 
-    GroupSuccessLogConverter INSTANCE = Mappers.getMapper(GroupSuccessLogConverter.class);
+    GroupLogConverter INSTANCE = Mappers.getMapper(GroupLogConverter.class);
 }

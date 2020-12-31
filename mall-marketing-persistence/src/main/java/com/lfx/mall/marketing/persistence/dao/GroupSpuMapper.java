@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-30 15:17:05
+ * @date 2020-12-31 15:11:49
  */
 @Repository
 public interface GroupSpuMapper extends BaseMapper<GroupSpu> {

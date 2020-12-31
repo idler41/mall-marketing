@@ -7,46 +7,26 @@ import java.util.Date;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-30 15:17:05
+ * @date 2020-12-31 15:11:49
  */
-@TableName("t_group_success_log")
+@TableName("t_act_rule")
 @Data
-public class GroupSuccessLog implements Serializable {
+public class ActRule implements Serializable {
 
     /**
-     * 成团日志id
+     * 活动规则id
      */
     private Integer id;
 
     /**
-     * 活动商品id
+     * 活动id
      */
-    private Integer actSpuId;
+    private Integer actId;
 
     /**
-     * 开团id
+     * 活动规则json
      */
-    private String groupId;
-
-    /**
-     * 团长用户id
-     */
-    private Integer leaderId;
-
-    /**
-     * 团开始时间
-     */
-    private Date startTime;
-
-    /**
-     * 拼团完成时间
-     */
-    private Date finishTime;
-
-    /**
-     * 最后成团用户id
-     */
-    private Integer lastMemberId;
+    private String ruleJson;
 
     /**
      * 删除标识  0-未删除 1-已删除

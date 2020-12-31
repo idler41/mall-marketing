@@ -7,11 +7,11 @@ import java.util.Date;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-30 15:16:48
+ * @date 2020-12-31 15:12:10
  */
-@TableName("t_group_shopping_member")
+@TableName("t_group_member")
 @Data
-public class GroupShoppingMember implements Serializable {
+public class GroupMember implements Serializable {
 
     /**
      * 参团id

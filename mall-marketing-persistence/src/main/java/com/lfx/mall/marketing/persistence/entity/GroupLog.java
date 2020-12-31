@@ -7,46 +7,46 @@ import java.util.Date;
 
 /**
  * @author <a href="mailto:idler41@163.con">idler41</a>
- * @date 2020-12-30 15:17:05
+ * @date 2020-12-31 15:11:49
  */
-@TableName("t_act_task_group")
+@TableName("t_group_log")
 @Data
-public class ActTaskGroup implements Serializable {
+public class GroupLog implements Serializable {
 
     /**
-     * 任务组id
+     * 成团日志id
      */
     private Integer id;
 
     /**
-     * 活动id
+     * 活动商品id
      */
-    private Integer actId;
+    private Integer actSpuId;
 
     /**
-     * 任务组名称
+     * 开团id
      */
-    private String groupName;
+    private String groupId;
 
     /**
-     * 任务组类型
+     * 团长用户id
      */
-    private Integer groupType;
+    private Integer leaderId;
 
     /**
-     * 任务组奖励类型
+     * 团开始时间
      */
-    private Integer rewardType;
+    private Date startTime;
 
     /**
-     * 任务组奖励数量
+     * 拼团完成时间
      */
-    private Integer rewardValue;
+    private Date finishTime;
 
     /**
-     * 当前状态 0--停用  1--启用
+     * 最后成团用户id
      */
-    private Integer groupStatus;
+    private Integer lastMemberId;
 
     /**
      * 删除标识  0-未删除 1-已删除

@@ -29,6 +29,7 @@
         <sharding-sphere.version>4.1.0</sharding-sphere.version>
         <guava.version>29.0-jre</guava.version>
 
+        <jetcache.version>2.5.14</jetcache.version>
         <dubbo.version>2.7.6</dubbo.version>
         <cglib.version>3.3.0</cglib.version>
         <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
@@ -155,6 +156,12 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alicp.jetcache</groupId>
+                <artifactId>jetcache-starter-redis-lettuce</artifactId>
+                <version>${jetcache.version}</version>
             </dependency>
 
             <dependency>

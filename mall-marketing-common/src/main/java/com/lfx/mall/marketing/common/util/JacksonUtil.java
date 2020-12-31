@@ -4,7 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>
@@ -16,6 +18,9 @@ public class JacksonUtil {
 
     static {
         OBJECT_MAPPER = new ObjectMapper();
+        SimpleDateFormat smt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        OBJECT_MAPPER.setDateFormat(smt);
+        OBJECT_MAPPER.setTimeZone(TimeZone.getTimeZone("GMT+8"));
     }
 
     public static String toJsonStr(Object val) {
