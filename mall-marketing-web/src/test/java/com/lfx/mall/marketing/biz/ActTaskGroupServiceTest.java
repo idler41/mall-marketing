@@ -1,6 +1,7 @@
 package com.lfx.mall.marketing.biz;
 
 import com.lfx.mall.marketing.base.AbstractSpringTest;
+import com.lfx.mall.marketing.common.util.JacksonUtil;
 import com.lfx.mall.marketing.service.ActTaskGroupService;
 import com.lfx.mall.marketing.service.base.request.IdRequest;
 import com.lfx.mall.marketing.service.request.ActTaskGroupPageRequest;
@@ -25,13 +26,13 @@ public class ActTaskGroupServiceTest extends AbstractSpringTest {
 
     @Test
     public void get() {
-        System.out.println(toJsonStr(actTaskGroupService.get(IdRequest.of(1)),true));
+        System.out.println(JacksonUtil.toJsonStr(actTaskGroupService.get(IdRequest.of(1)), true));
     }
 
     @Test
     public void page() {
         ActTaskGroupPageRequest request = readJsonFile("group-page.json", ActTaskGroupPageRequest.class);
-        System.out.println(toJsonStr(actTaskGroupService.page(request),true));
+        System.out.println(JacksonUtil.toJsonStr(actTaskGroupService.page(request), true));
     }
 
 }

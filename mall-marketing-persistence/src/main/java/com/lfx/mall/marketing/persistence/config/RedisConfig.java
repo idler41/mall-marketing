@@ -29,7 +29,7 @@ public class RedisConfig {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
-        objectMapper.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        objectMapper.setTimeZone(TimeZone.getDefault());
         return objectMapper;
     }
 
@@ -54,11 +54,12 @@ public class RedisConfig {
             JacksonValueDecoder jacksonValueDecoder,
             JacksonValueEncoder jacksonValueEncoder
     ) {
+        String jacksonConvertor = "jackson";
         return new SpringConfigProvider() {
 
             @Override
             public Function<Object, Object> parseKeyConvertor(String convertor) {
-                if ("jackson".equalsIgnoreCase(convertor)) {
+                if (jacksonConvertor.equalsIgnoreCase(convertor)) {
                     return jacksonRedisKeyConvertor;
                 } else {
                     return super.parseKeyConvertor(convertor);
@@ -67,7 +68,7 @@ public class RedisConfig {
 
             @Override
             public Function<Object, byte[]> parseValueEncoder(String valueEncoder) {
-                if ("jackson".equalsIgnoreCase(valueEncoder)) {
+                if (jacksonConvertor.equalsIgnoreCase(valueEncoder)) {
                     return jacksonValueEncoder;
                 } else {
                     return super.parseValueEncoder(valueEncoder);
@@ -76,7 +77,7 @@ public class RedisConfig {
 
             @Override
             public Function<byte[], Object> parseValueDecoder(String valueDecoder) {
-                if ("jackson".equalsIgnoreCase(valueDecoder)) {
+                if (jacksonConvertor.equalsIgnoreCase(valueDecoder)) {
                     return jacksonValueDecoder;
                 } else {
                     return super.parseValueDecoder(valueDecoder);

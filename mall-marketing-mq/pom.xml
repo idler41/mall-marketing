@@ -18,6 +18,11 @@
         </dependency>
 
         <dependency>
+            <groupId>com.lfx.mall-marketing</groupId>
+            <artifactId>mall-marketing-common</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.lfx.demo</groupId>
             <artifactId>demo-trace</artifactId>
         </dependency>

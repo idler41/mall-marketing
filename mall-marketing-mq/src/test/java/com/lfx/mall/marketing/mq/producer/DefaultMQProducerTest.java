@@ -2,6 +2,7 @@ package com.lfx.mall.marketing.mq.producer;
 
 import com.lfx.demo.mq.producer.OrderProducerBeanHelper;
 import com.lfx.demo.mq.producer.ProducerBeanHelper;
+import com.lfx.mall.marketing.common.util.JacksonUtil;
 import com.lfx.mall.marketing.mq.AbstractSpringTest;
 import com.lfx.mall.marketing.mq.enums.MQTopicEnum;
 import org.junit.Test;
@@ -21,11 +22,11 @@ public class DefaultMQProducerTest extends AbstractSpringTest {
 
     @Test
     public void send() {
-        producerBeanHelper.send(MQTopicEnum.TEST, "sendTest", this::toBytes);
+        producerBeanHelper.send(MQTopicEnum.TEST, "sendTest", JacksonUtil::toBytes);
     }
 
     @Test
     public void sendOrder() {
-        orderProducerBeanHelper.send(MQTopicEnum.TEST, "sendTest", "shardingKey", this::toBytes);
+        orderProducerBeanHelper.send(MQTopicEnum.TEST, "sendTest", "shardingKey", JacksonUtil::toBytes);
     }
 }

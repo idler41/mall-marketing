@@ -23,7 +23,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
 /**
- * application.properties放到config目录是为了避免同名配置文件被覆盖(persistenceh和service层的同名文件: application.properties)
+ * application.properties放到config目录是为了避免同名配置文件被覆盖(persistence和service层的同名文件: application.properties)
  * 使用@PropertySources是为了避免service层不能正常加载persistence层的配置文件
  *
  * @author <a href="mailto:linfx@dydf.cn">linfuxin</a>

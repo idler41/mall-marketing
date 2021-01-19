@@ -1,7 +1,5 @@
 package com.lfx.mall.marketing.base;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lfx.mall.marketing.common.util.JacksonUtil;
 import com.lfx.mall.marketing.web.config.WebConfig;
 import org.junit.runner.RunWith;
@@ -21,8 +19,6 @@ import java.util.Objects;
 @SpringBootTest(classes = WebConfig.class)
 public class AbstractSpringTest {
 
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
     public static void initSysProperty() {
         System.setProperty("apollo.configService", "http://10.0.46.45:8080");
         System.setProperty("dubbo.application.qosPort", "9003");
@@ -31,34 +27,21 @@ public class AbstractSpringTest {
         System.setProperty("log.log-default-file", "CONSOLE_LOG");
     }
 
-    public String toJsonStr(Object val) {
-        return toJsonStr(val, false);
-    }
-
-    public String toJsonStr(Object val, boolean prettyFormat) {
-        try {
-            return prettyFormat ? OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(val) : OBJECT_MAPPER.writeValueAsString(val);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static <T> T readJsonFile(String fileName, Class<T> clazz) {
         String jsonContent = loadResource(fileName);
         return JacksonUtil.parseObject(jsonContent, clazz);
     }
 
     public static String loadResource(String resourceName) {
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(AbstractSpringTest.class.getClassLoader().getResourceAsStream(resourceName))));
-            StringBuilder buffer = new StringBuilder();
+        StringBuilder buffer = new StringBuilder();
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(AbstractSpringTest.class.getClassLoader().getResourceAsStream(resourceName))))) {
             String line;
             while ((line = in.readLine()) != null) {
                 buffer.append(line);
             }
             return buffer.toString();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            return null;
         }
     }
 }

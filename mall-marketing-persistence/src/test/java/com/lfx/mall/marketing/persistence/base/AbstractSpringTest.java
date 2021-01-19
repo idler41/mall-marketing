@@ -27,30 +27,21 @@ public class AbstractSpringTest {
         System.setProperty("log.log-default-file", "CONSOLE_LOG");
     }
 
-    public String toJsonStr(Object val) {
-        return toJsonStr(val, false);
-    }
-
-    public String toJsonStr(Object val, boolean prettyFormat) {
-        return JacksonUtil.toJsonStr(val, prettyFormat);
-    }
-
     public static <T> T readJsonFile(String fileName, Class<T> clazz) {
         String jsonContent = loadResource(fileName);
         return JacksonUtil.parseObject(jsonContent, clazz);
     }
 
     public static String loadResource(String resourceName) {
-        try {
-            BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(AbstractSpringTest.class.getClassLoader().getResourceAsStream(resourceName))));
-            StringBuilder buffer = new StringBuilder();
+        StringBuilder buffer = new StringBuilder();
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Objects.requireNonNull(AbstractSpringTest.class.getClassLoader().getResourceAsStream(resourceName))))) {
             String line;
             while ((line = in.readLine()) != null) {
                 buffer.append(line);
             }
             return buffer.toString();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            return null;
         }
     }
 }
